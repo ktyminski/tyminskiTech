@@ -37,7 +37,8 @@ body {
 .header-link:hover { color: var(--ink); }
 .header-link span { color: var(--lime); font-size: 1rem; }
 
-.hero { min-height: 690px; display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(290px, .75fr); gap: 9%; align-items: center; padding: 70px 0 88px; }
+.hero { min-height: 600px; display: flex; align-items: center; padding: 70px 0 88px; }
+.hero-copy { max-width: 820px; }
 .eyebrow, .section-index, .profile-label { margin: 0; font: 500 .69rem/1.4 "DM Mono", monospace; letter-spacing: .12em; color: var(--muted); }
 .eyebrow { display: flex; align-items: center; gap: 9px; color: var(--lime); }
 .eyebrow span { width: 7px; height: 7px; background: var(--lime); border-radius: 50%; box-shadow: 0 0 16px var(--lime); }
@@ -49,16 +50,7 @@ h1 em, .contact h2 em { color: var(--blue); font-style: normal; }
 .button:hover { transform: translateY(-3px); background: #d5ff70; }
 .button span { font-size: 1.1rem; }
 
-.profile-card { align-self: center; width: min(100%, 375px); justify-self: end; background: #0e223a; border: 1px solid rgba(159, 199, 238, .24); box-shadow: 25px 25px 0 rgba(63,132,255,.13); }
-.portrait-wrap { position: relative; height: 355px; overflow: hidden; background: #19385a; }
-.portrait-wrap::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 44%, rgba(7,17,31,.88)); }
-.portrait-wrap img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center top; filter: grayscale(100%) contrast(1.08) brightness(.92); mix-blend-mode: luminosity; }
 .portrait-grid { position: absolute; z-index: 1; inset: 0; opacity: .4; background-image: linear-gradient(rgba(132, 186, 255, .18) 1px, transparent 1px), linear-gradient(90deg, rgba(132, 186, 255, .18) 1px, transparent 1px); background-size: 25px 25px; mask-image: linear-gradient(to bottom, black, transparent 76%); }
-.profile-copy { display: flex; justify-content: space-between; align-items: flex-end; gap: 10px; padding: 18px 20px 19px; }
-.profile-label { color: var(--blue); font-size: .59rem; }
-.profile-copy h2 { margin: 7px 0 0; font-size: 1.52rem; line-height: 1.04; letter-spacing: -.06em; }
-.online { display: flex; gap: 6px; align-items: center; white-space: nowrap; font: .58rem "DM Mono", monospace; color: var(--muted); }
-.online i { width: 6px; height: 6px; border-radius: 50%; background: var(--lime); box-shadow: 0 0 9px var(--lime); }
 
 .statement { display: grid; grid-template-columns: 25% 1fr; gap: 7%; padding: 92px 0; border-top: 1px solid var(--line); }
 .section-index { color: var(--dim); }
@@ -86,6 +78,14 @@ h1 em, .contact h2 em { color: var(--blue); font-style: normal; }
 .steps h3 { margin: 0 0 7px; font-size: 1.05rem; letter-spacing: -.03em; }
 .steps p { margin: 0; color: var(--muted); font-size: .91rem; line-height: 1.65; }
 
+.about { display: grid; grid-template-columns: minmax(280px, .8fr) minmax(0, 1fr); gap: clamp(46px, 9vw, 130px); align-items: center; padding: 0 0 112px; }
+.about-photo { position: relative; height: 470px; overflow: hidden; background: #19385a; border: 1px solid rgba(159, 199, 238, .24); box-shadow: 20px 20px 0 rgba(63,132,255,.13); }
+.about-photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 42%, rgba(7,17,31,.78)); }
+.about-photo img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center top; filter: grayscale(100%) contrast(1.08) brightness(.92); mix-blend-mode: luminosity; }
+.about-copy h2 { margin: 17px 0 22px; font-size: clamp(2.75rem, 4.2vw, 4.25rem); line-height: .98; letter-spacing: -.075em; }
+.about-copy p:not(.section-index) { max-width: 540px; color: var(--muted); font-size: 1rem; line-height: 1.72; }
+.about-copy .about-lead { margin-bottom: 19px; color: var(--ink); font-size: 1.17rem; line-height: 1.5; font-weight: 700; letter-spacing: -.025em; }
+
 .contact { background: var(--lime); color: #07111f; padding: 88px 0 80px; }
 .contact-inner { display: grid; grid-template-columns: 25% 1fr; gap: 7%; }
 .contact .section-index { color: #4e6313; }
@@ -102,10 +102,8 @@ footer { display: flex; justify-content: space-between; gap: 24px; padding: 27px
   .wrap { width: min(100% - 32px, 560px); }
   .site-header { height: 72px; }
   .header-link { font-size: .67rem; }
-  .hero { min-height: auto; grid-template-columns: 1fr; gap: 44px; padding: 62px 0 66px; }
+  .hero { min-height: auto; padding: 62px 0 66px; }
   h1 { font-size: clamp(2.95rem, 14vw, 4.6rem); }
-  .profile-card { width: 100%; max-width: 375px; justify-self: start; box-shadow: 14px 14px 0 rgba(63,132,255,.13); }
-  .portrait-wrap { height: 330px; }
   .statement, .section-heading, .contact-inner { grid-template-columns: 1fr; gap: 20px; }
   .statement { padding: 70px 0; }
   .section-heading h2 { margin: 0 0 40px; }
@@ -115,6 +113,8 @@ footer { display: flex; justify-content: space-between; gap: 24px; padding: 27px
   .service-arrow { font-size: 1.05rem; }
   .approach { grid-template-columns: 1fr; gap: 48px; padding: 76px 0; }
   .steps li { grid-template-columns: 45px 1fr; gap: 10px; }
+  .about { grid-template-columns: 1fr; gap: 42px; padding-bottom: 76px; }
+  .about-photo { height: 390px; max-width: 420px; box-shadow: 14px 14px 0 rgba(63,132,255,.13); }
   .contact { padding: 70px 0 64px; }
   .contact h2 { margin: 0 0 17px; }
   footer { flex-direction: column; gap: 9px; }
