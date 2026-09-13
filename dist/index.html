@@ -28,7 +28,7 @@
       <section class="hero wrap">
         <div class="hero-copy">
           <p class="eyebrow">IT × LOGISTYKA</p>
-          <h1>Systemy, które<br />dają <em>kontrolę</em><br />nad operacją.</h1>
+          <h1>Systemy operacyjne<br />dla logistyki.</h1>
           <p class="intro">
             Projektuję i wdrażam narzędzia dla sprzedaży, realizacji i trackingu. Doświadczenie w aplikacjach logistycznych pozwala mi szybko rozumieć proces operacyjny, obieg informacji i wyjątki — bez długiego wprowadzania w specyfikę branży.
           </p>
@@ -124,10 +124,12 @@
             <h2>Masz proces, który<br />zasługuje na <em>lepszy system?</em></h2>
             <p>Porozmawiajmy o tym, co dziś spowalnia Twoją operację — i jak technologia może realnie to zmienić.</p>
           </div>
-          <a class="contact-link" href="mailto:karol@tyminski.tech">
-            <span class="email-address">karol@tyminski.tech</span>
-            <span class="contact-arrow" aria-hidden="true">↗</span>
-          </a>
+          <div class="contact-details">
+            <a class="contact-link" href="mailto:karol@tyminski.tech">
+              <span class="email-address">karol@tyminski.tech</span>
+            </a>
+            <span class="phone-slot phone-contact" data-phone aria-live="polite"><noscript>Kontakt telefoniczny wymaga włączonego JavaScriptu.</noscript></span>
+          </div>
         </div>
       </section>
     </main>
@@ -136,5 +138,17 @@
       <span>© 2026 Tyminski Tech</span>
       <span>IT &amp; logistyka.</span>
     </footer>
+    <script>
+      (() => {
+        const phone = String.fromCharCode(43, 52, 56, 32, 54, 54, 53, 32, 51, 50, 51, 32, 50, 51, 51);
+        const slot = document.querySelector('[data-phone]');
+        if (!slot) return;
+        const link = document.createElement('a');
+        link.href = `tel:${phone.replace(/\s/g, '')}`;
+        link.textContent = `tel. ${phone}`;
+        link.setAttribute('aria-label', `Zadzwoń: ${phone}`);
+        slot.replaceChildren(link);
+      })();
+    </script>
   </body>
 </html>
