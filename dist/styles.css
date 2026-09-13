@@ -78,10 +78,10 @@ h1 em, .contact h2 em { color: var(--blue); font-style: normal; }
 .steps h3 { margin: 0 0 7px; font-size: 1.05rem; letter-spacing: -.03em; }
 .steps p { margin: 0; color: var(--muted); font-size: .91rem; line-height: 1.65; }
 
-.about { display: grid; grid-template-columns: minmax(280px, .8fr) minmax(0, 1fr); gap: clamp(46px, 9vw, 130px); align-items: center; padding: 0 0 112px; }
-.about-photo { position: relative; height: 470px; overflow: hidden; background: #19385a; border: 1px solid rgba(159, 199, 238, .24); box-shadow: 20px 20px 0 rgba(63,132,255,.13); }
+.about { display: grid; grid-template-columns: minmax(260px, 340px) minmax(0, 1fr); gap: clamp(46px, 9vw, 130px); align-items: center; padding: 0 0 112px; }
+.about-photo { position: relative; height: 410px; overflow: hidden; background: #19385a; border: 1px solid rgba(159, 199, 238, .24); box-shadow: 20px 20px 0 rgba(63,132,255,.13); }
 .about-photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 42%, rgba(7,17,31,.78)); }
-.about-photo img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center top; filter: grayscale(100%) contrast(1.08) brightness(.92); mix-blend-mode: luminosity; }
+.about-photo img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center top; }
 .about-copy h2 { margin: 17px 0 22px; font-size: clamp(2.75rem, 4.2vw, 4.25rem); line-height: .98; letter-spacing: -.075em; }
 .about-copy p:not(.section-index) { max-width: 540px; color: var(--muted); font-size: 1rem; line-height: 1.72; }
 .about-copy .about-lead { margin-bottom: 19px; color: var(--ink); font-size: 1.17rem; line-height: 1.5; font-weight: 700; letter-spacing: -.025em; }
@@ -114,7 +114,7 @@ footer { display: flex; justify-content: space-between; gap: 24px; padding: 27px
   .approach { grid-template-columns: 1fr; gap: 48px; padding: 76px 0; }
   .steps li { grid-template-columns: 45px 1fr; gap: 10px; }
   .about { grid-template-columns: 1fr; gap: 42px; padding-bottom: 76px; }
-  .about-photo { height: 390px; max-width: 420px; box-shadow: 14px 14px 0 rgba(63,132,255,.13); }
+  .about-photo { height: 360px; max-width: 340px; box-shadow: 14px 14px 0 rgba(63,132,255,.13); }
   .contact { padding: 70px 0 64px; }
   .contact h2 { margin: 0 0 17px; }
   footer { flex-direction: column; gap: 9px; }
