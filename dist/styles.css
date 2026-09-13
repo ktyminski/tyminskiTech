@@ -92,9 +92,10 @@ h1 em, .contact h2 em { color: var(--blue); font-style: normal; }
 .contact h2 { max-width: 780px; margin: -11px 0 17px; color: #07111f; }
 .contact h2 em { color: #2152b1; }
 .contact p:not(.section-index) { max-width: 535px; margin-bottom: 35px; color: #3a5411; font-size: 1.03rem; line-height: 1.65; }
-.contact-link { color: #07111f; text-decoration: none; font-size: clamp(1.25rem, 2.5vw, 2rem); font-weight: 800; letter-spacing: -.05em; border-bottom: 2px solid rgba(7,17,31,.85); padding-bottom: 5px; transition: color .2s ease; }
+.contact-link { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: end; gap: 20px; width: min(100%, 640px); color: #07111f; text-decoration: none; font-size: clamp(1.25rem, 2.5vw, 2rem); font-weight: 800; letter-spacing: -.05em; border-bottom: 2px solid rgba(7,17,31,.85); padding-bottom: 5px; transition: color .2s ease; }
+.email-address { white-space: nowrap; }
 .contact-link:hover { color: #2152b1; }
-.contact-link span { color: #2152b1; }
+.contact-arrow { color: #2152b1; }
 footer { display: flex; justify-content: space-between; gap: 24px; padding: 27px 0 30px; color: var(--dim); font: .62rem "DM Mono", monospace; letter-spacing: .04em; }
 
 @media (max-width: 760px) {
